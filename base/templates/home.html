@@ -1,0 +1,56 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notebook</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>NOTE-X</h1>
+        </div>
+        <ul class="nav_items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Dev</a></li>
+            <li><a href="#">Help!</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% comment %} The profile {% endcomment %}
+        <article class="profile">
+
+        </article>
+        {% comment %} The note {% endcomment %}
+        <div class="notes">
+            <center><h1>Notes</h1></center>
+            {%for note in notes%}
+                <a href="" class="notes_link"><div class="notes_item">
+                    <h2>{{note.Topic}}</h2>
+                    <p>{{note.discription}}</p>
+                </div></a>
+            {%endfor%}
+        </div>
+        {% comment %} The sticky note {% endcomment %}
+        <div class="sticky_notes">
+            <center><h1>Sticky Notes</h1></center>
+            {%for Snote in Snotes%}
+            <a href="" class="Snotes_link"><div class="Snotes_item">
+                <p>{{Snote}}</p>
+            </div></a>
+            {%endfor%}
+        </div>
+        {% comment %} Login page {% endcomment %}
+        <section class="SignUp">
+            <div class="SignUp_outerlayer">
+                <a href="" class= "SignUp_exitbutton"><img src="cross.png" alt=""></a>
+                <div class="SignUp_innerlayer">
+
+                </div>
+            </div>
+        </section>
+
+</main>
+</body>
+</html>
