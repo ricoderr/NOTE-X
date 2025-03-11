@@ -6,6 +6,9 @@ def home(request):
     Snotes = Sticky_notes.objects.all()
     return render(request,"home.html",{"notes": notes, 
                                        "Snotes": Snotes})
+
+def signUp(request):
+    return render(request,"signUp.html")
     
 
 

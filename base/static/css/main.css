@@ -179,34 +179,5 @@ article:hover{
 }
 /* SignUp-------------------------------------------------------------------------------------> */
 
-.SignUp{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(139, 88, 88, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.SignUp_outerlayer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    height: 70%;
-    background: transparent;
-}
-
-.SignUp_innerlayer{
-    width: 85%;
-    height: 85%;
-    border: 5px solid var(--p-color);
-    border-radius: 5%;
-    border-top-left-radius: 0;
-    background-color: #f4a6d78d;
-}
 
 
