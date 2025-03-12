@@ -10,19 +10,21 @@
 <body>
     <main>
         <h1>SignUp here!</h1>
-        
-        <form action="">
-            <input type="text">
+        <form action="" method="POST">
+            {% csrf_token %}
             <label for="">First Name</label>
+            <input type="text" placeholder="" name="">
 
-            <input type="text">
             <label for="">Last Name</label>
+            <input type="text" placeholder="" name="">>
 
-            <input type="text">
-            <label for=""></label>
+            <label for="">Create password:</label>
+            <input type="text" placeholder="" name="">
 
-            <input type="text">
-            <label for=""></label>
+            <label for="">Conform password:</label>
+            <input type="text" placeholder="" name="">
+            
+            <button type="submit">SignUp</button>
         </form>
     </main>
 </body>
