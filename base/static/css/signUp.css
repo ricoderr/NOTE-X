@@ -1,1 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Baloo 2";
+    background-color: black;
+    color: white;
+}
+html{
+    height: 99.8%;
+}
+:root{
+    --p-color: #854ce6;
+    --s-color: #f4a6d7;
+    --t-color: #e6e6e6;
+}
+
+.back_icon{
+    background-color: transparent;
+    position:relative;
+    top: -40%;
+    right:-30%;
+    
+}
+.icon_inside{
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+}
+.icon_path{
+    color: var(--p-color);
+    stroke: var(--p-color);
+    transition: color ease-in-out 0.5s, stroke ease-in-out 0.5s;
+}
+.back_icon :hover .icon_path{
+    color: var(--s-color);
+    stroke: var(--s-color);
+
+}
+body{
+    height: 99.8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+main{
+    width: 30%;
+    height: 75%;
+    box-shadow: 0 0 10px var(--p-color), 0 0 20px var(--p-color);
+    transition: box-shadow ease-in-out 0.5s;
+    border-radius: 8%;
+}
+main:hover{
+    box-shadow: 0 0 10px var(--s-color), 0 0 20px var(--s-color);
+}
+
+main header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background: transparent;
+}
+form{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    background: transparent;
+}
+.form_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 90%;
+}
+.input_box{
+    width: 40%;
+    position:relative;
+    margin: 1rem;
+
+}
+.input-box::after{
+    content:'';
+    background-color: var(--s-color);
+    width: 100%;
+    height: 2rem;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    
+}
+
+.SignUp_button{
+    margin: 1rem;
+    width: 6rem;
+    height: 4rem;
+    font-size: 1.5rem;
+}
