@@ -21,24 +21,20 @@
         <form action="" method="POST">
             {% csrf_token %}
             <div class="form_container">
-                <label for="" required>First Name:</label>
-                <input type="text" placeholder="" name="" class="input_box">
-            </div>
-            <div class="form_container">
-                <label for="" required>Last Name:</label>
-                <input type="text" placeholder="" name="" class="input_box">
+                <label for="" >Username:</label>
+                <input type="text" placeholder="" name="Username" class="input_box" required>
             </div>
             <div class="form_container">
                 <label for="">E-mail (optional):</label>
-                <input type="text" placeholder="" name="" class="input_box">
+                <input type="text" placeholder="" name="Email" class="input_box" required>
             </div>
             <div class="form_container">
-                <label for="" required>Create pass:</label>
-                <input type="text" placeholder="" name="" class="input_box">
+                <label for="" >Create pass:</label>
+                <input type="password" placeholder="" name="Password" class="input_box" >
             </div>
             <div class="form_container">
-                <label for="" required>Conform pass:</label>
-                <input type="text" placeholder="" name="" class="input_box">
+                <label for="" >Confirm pass:</label>
+                <input type="password" placeholder="" name="Cpassword" class="input_box" required>
             </div>
 
             
