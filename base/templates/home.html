@@ -25,12 +25,16 @@
         {% comment %} The note {% endcomment %}
         <div class="notes">
             <center><h1>Notes</h1></center>
-            {%for note in notes%}
-                <a href="" class="notes_link"><div class="notes_item">
-                    <h2>{{note.Topic}}</h2>
-                    <p>{{note.discription}}</p>
-                </div></a>
-            {%endfor%}
+            {%if note%}
+                {%for note in notes%}
+                    <a href="" class="notes_link"><div class="notes_item">
+                        <h2>{{note.Topic}}</h2>
+                        <p>{{note.discription}}</p>
+                    </div></a>
+                {%endfor%}
+            {%else%}
+                <img src="" alt="">
+            {%endif%}
         </div>
         {% comment %} The sticky note {% endcomment %}
         <div class="sticky_notes">
