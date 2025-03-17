@@ -148,18 +148,19 @@ article:hover{
     overflow: hidden;
 }
 .add_note{
+    font-weight: bold;
     padding: 0.8rem;
     position:fixed;
     top: 87%;
     left: 70%;
-    border: 2px solid var(--s-color);
+    border: 0.2rem solid var(--s-color);
     background-color: black;
     border-radius: 8%;
     transition: border ease-in-out 0.5s, background-color ease-in-out 0.5s;
     cursor: pointer;
 }
 .add_note:hover{
-    border: 2px solid var(--p-color);
+    border: 0.2rem solid var(--p-color);
     background-color: var(--p-color);
 }
 .sticky_notes{

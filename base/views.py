@@ -28,6 +28,9 @@ def signUp(request):
             
             
     return render(request,"signUp.html", {"messages" : messages})
+
+def signIn(request):
+    return render(request, 'signIn.html')
     
 
 
