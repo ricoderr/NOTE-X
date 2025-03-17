@@ -193,7 +193,32 @@ article:hover{
     border: 3px solid var(--p-color);
     margin: calc(12% - 2px);
 }
-/* SignUp-------------------------------------------------------------------------------------> */
+/* ADD NOTE--------------------------------------------------------------> */
+.add_notepage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 90%;
+    background-color: black;
+    border: 2px solid red;
+    border-radius: 8%;
+}
+.add_title{
+    border: 2px solid var(--p-color);
+    width: 80%;
+    height: 5%;
+    margin: 3%;
+}
+.add_notepage form{
+    width: 99.8%;
+    height: 90%;
+    background-color: transparent;
+}
 
 
 

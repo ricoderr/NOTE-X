@@ -42,9 +42,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    background-color: transparent;
 }
 main{
+    background-color: transparent;
     width: 30%;
     height: 75%;
     box-shadow: 0 0 10px var(--p-color), 0 0 20px var(--p-color);
@@ -124,3 +125,17 @@ form{
     border: 2px solid var(--p-color);
     background-color: var(--p-color);
 }
+.SignIn_director{
+    color: white;
+    position:absolute;
+    left: 44%;
+    bottom: 7%;  
+    transition: color ease-in-out 0.5s;
+}
+.SignIn_director:hover{
+    color: var(--p-color);
+}
+
+
+
+/* ADDITIONAL STYLES FOR SIGNIN --------------------------------------------------------------------> */

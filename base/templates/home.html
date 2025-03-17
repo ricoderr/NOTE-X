@@ -14,7 +14,7 @@
         <ul class="nav_items">
             <li><a href="#">Home</a></li>
             <li><a href="#">About Dev</a></li>
-            <li><a href="signUp/">SignUp!</a></li>
+            <li><a href="signUp/">SignUp/In!</a></li>
         </ul>
     </nav>
     <main>
@@ -39,6 +39,21 @@
                 <img src="" alt="">
             {%endif%}
             <a href="" class="add_note">ADD NOTE</a>
+        </div>
+        {% comment %} ADD NOTE {% endcomment %}
+
+
+        <div class="add_notepage">
+            <header>
+                <h1>ADD NOTE</h1>
+                <h2>{{username}}</h2>
+            </header>
+            <form action="" method="POST">
+            {% csrf_token %}
+                <input type="text" class="add_title">
+                <input type="text" class="add_notepara">
+            </form>
+            
         </div>
 
 

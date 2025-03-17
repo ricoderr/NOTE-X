@@ -3,13 +3,8 @@ from .models import Notes , Sticky_notes
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
 
-
-def home(request):
-    notes = Notes.objects.all()
-    Snotes = Sticky_notes.objects.all()
-    return render(request,"home.html",{"notes": notes, 
-                                       "Snotes": Snotes})
 
 def signUp(request):
     if request.method == "POST":
@@ -30,7 +25,27 @@ def signUp(request):
     return render(request,"signUp.html", {"messages" : messages})
 
 def signIn(request):
+    if request.method == "POST":
+        username = request.POST.get("Username")
+        pass1 = request.POST.get("password")
+        user = authenticate(username = username , password = pass1)
+        
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Welcome back!")
+            return render(request, "home.html", {"messages" : messages})
+            
+        else :
+            messages.error(request,"Crediantials error!")
+            return render(request, "SignIn.html")
+        
     return render(request, 'signIn.html')
+
+def home(request):
+    notes = Notes.objects.all()
+    Snotes = Sticky_notes.objects.all()
+    return render(request,"home.html",{"notes": notes, 
+                                       "Snotes": Snotes})
     
 
 
