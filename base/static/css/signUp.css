@@ -133,7 +133,7 @@ form{
     transition: color ease-in-out 0.5s;
 }
 .SignIn_director:hover{
-    color: var(--p-color);
+    color: var(--s-color);
 }
 
 

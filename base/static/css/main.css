@@ -77,10 +77,26 @@ nav{
     height: 5%;
     position: absolute;
 }
+.user_icon {
+    display: relative;
+    width: 2rem;
+    padding: 0.2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0;
+    
+}
+
+.user_name {
+    position: relative;
+    bottom: 0.6rem;
+}
+
+
 main{
     display: flex;
     width: 99.8%;
     height: calc(100vh - 7.5rem);
+    border-radius: 15%;
     
 }
 article{
@@ -117,7 +133,7 @@ article:hover{
   .notes_link{
       background: transparent;
       width: 100%;
-       max-width: 120vh; /*This ensures that the widht of the notes-items doesn't change when the width of the notes is changed when hovered */
+      max-width: 120vh; /*This ensures that the widht of the notes-items doesn't change when the width of the notes is changed when hovered */
   }
 
 .notes_item{
@@ -153,15 +169,15 @@ article:hover{
     position:fixed;
     top: 87%;
     left: 70%;
-    border: 0.2rem solid var(--s-color);
+    border: 0.2rem solid var(--p-color);
     background-color: black;
     border-radius: 8%;
     transition: border ease-in-out 0.5s, background-color ease-in-out 0.5s;
     cursor: pointer;
 }
 .add_note:hover{
-    border: 0.2rem solid var(--p-color);
-    background-color: var(--p-color);
+    border: 0.2rem solid var(--s-color);
+    background-color: var(--s-color);
 }
 .sticky_notes{
     display: flex;
@@ -195,7 +211,7 @@ article:hover{
 }
 /* ADD NOTE--------------------------------------------------------------> */
 .add_notepage{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     position: absolute;

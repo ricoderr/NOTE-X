@@ -39,13 +39,15 @@ def signIn(request):
             messages.error(request,"Crediantials error!")
             return render(request, "SignIn.html")
         
-    return render(request, 'signIn.html')
+    return render(request, 'home.html')
 
 def home(request):
     notes = Notes.objects.all()
     Snotes = Sticky_notes.objects.all()
+    user = User.objects.all()
     return render(request,"home.html",{"notes": notes, 
-                                       "Snotes": Snotes})
+                                       "Snotes": Snotes,
+                                       "user": user})
     
 
 

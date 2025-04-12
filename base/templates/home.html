@@ -14,7 +14,14 @@
         <ul class="nav_items">
             <li><a href="#">Home</a></li>
             <li><a href="#">About Dev</a></li>
-            <li><a href="signUp/">SignUp/In!</a></li>
+            <li><a href="signUp/">
+                {%if user.is_authenticated%}
+                <img src="{% static 'images/user-rounded-svgrepo-com.svg' %}" alt="SVG Icon" class="user_icon">
+                <span class="user_name">{{user.username}}</span>
+                {%else%}
+                SignUp/In!
+                {%endif%}
+            </a></li>
         </ul>
     </nav>
     <main>
