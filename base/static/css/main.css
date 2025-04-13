@@ -101,6 +101,9 @@ main{
 }
 article{
     display: flex;
+    border-radius: 45px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     width: 20%;
     height: 100%;
     box-shadow: 0 0 10px var(--p-color), 0 0 20px var(--p-color); 
@@ -112,6 +115,8 @@ article:hover{
 
 }
 .notes{
+    margin:  0rem 3rem;
+    border-radius: 45px;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -130,10 +135,10 @@ article:hover{
 .notes::-webkit-scrollbar {
     display: none; 
   }
-  .notes_link{
-      background: transparent;
-      width: 100%;
-      max-width: 120vh; /*This ensures that the widht of the notes-items doesn't change when the width of the notes is changed when hovered */
+.notes_link{
+    background: transparent;
+    width: 100%;
+    max-width: 120vh; /*This ensures that the widht of the notes-items doesn't change when the width of the notes is changed when hovered */
   }
 
 .notes_item{
@@ -163,7 +168,7 @@ article:hover{
     padding: 1%;
     overflow: hidden;
 }
-.add_note{
+.addnote_button{
     font-weight: bold;
     padding: 0.8rem;
     position:fixed;
@@ -171,16 +176,21 @@ article:hover{
     left: 70%;
     border: 0.2rem solid var(--p-color);
     background-color: black;
-    border-radius: 8%;
-    transition: border ease-in-out 0.5s, background-color ease-in-out 0.5s;
+    border-radius: 45px;
+    transition: border ease-in-out 0.5s, background-color ease-in-out 0.5s, color ease-in-out 0.5s;
     cursor: pointer;
 }
-.add_note:hover{
+.addnote_button:hover{
     border: 0.2rem solid var(--s-color);
     background-color: var(--s-color);
+    color: var(--p-color);
 }
+/* sticky notes --------------------------------------------------------->*/
 .sticky_notes{
     display: flex;
+    border-radius: 45px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     flex-direction: column;
     width: 20%;
     box-shadow: 0 0 10px var(--p-color), 0 0 20px var(--p-color); 
@@ -210,30 +220,15 @@ article:hover{
     margin: calc(12% - 2px);
 }
 /* ADD NOTE--------------------------------------------------------------> */
-.add_notepage{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 90%;
-    background-color: black;
-    border: 2px solid red;
-    border-radius: 8%;
-}
-.add_title{
-    border: 2px solid var(--p-color);
-    width: 80%;
-    height: 5%;
-    margin: 3%;
-}
-.add_notepage form{
-    width: 99.8%;
-    height: 90%;
-    background-color: transparent;
+.addnote_background{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70vw;
+        height: 60vh;
+        background-color: rgba(0, 0, 0, 0.074); 
+        z-index: 9999;     
+        border: 2px solid red;
 }
 
 
