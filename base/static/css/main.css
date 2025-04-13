@@ -221,14 +221,33 @@ article:hover{
 }
 /* ADD NOTE--------------------------------------------------------------> */
 .addnote_background{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: fixed;
         top: 0;
         left: 0;
-        width: 70vw;
-        height: 60vh;
-        background-color: rgba(0, 0, 0, 0.074); 
+        width: 99.5vw;
+        height: 99.5vh;
+        background-color: rgba(0, 0, 0, 0.545); 
         z-index: 9999;     
         border: 2px solid red;
+}
+.add_note{
+    width: 60%;
+    height: 80%;
+    border: 2px solid red;
+    border-radius: 45px;
+}
+.add_note nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+.add_note form{
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5%;
 }
 
 
