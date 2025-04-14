@@ -221,23 +221,29 @@ article:hover{
 }
 /* ADD NOTE--------------------------------------------------------------> */
 .addnote_background{
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         position: fixed;
         top: 0;
         left: 0;
         width: 99.5vw;
-        height: 99.5vh;
-        background-color: rgba(0, 0, 0, 0.545); 
+        height: 99.5vh; 
         z-index: 9999;     
-        border: 2px solid red;
+        background-color: transparent;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px); 
+      
 }
 .add_note{
     width: 60%;
     height: 80%;
-    border: 2px solid red;
+    border: 2px solid var(--p-color);
+    transition: border 0.5s ease-in-out;
     border-radius: 45px;
+}
+.add_note:hover{
+    border: 2px solid var(--s-color);
 }
 .add_note nav{
     display: flex;
@@ -249,6 +255,38 @@ article:hover{
     flex-direction: column;
     padding: 2% 5%;
 }
+.title_label, .discription_label{
+    font-size: larger;
+    font-weight: bold;
+}
+.title_input{
+    height: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 15px;
+    border: 2px solid var(--p-color);
+    border-radius: 15px;
+}
+.discription_input{
+    height: 14rem;
+    border-radius: 25px;
+    padding: 15px;
+    resize: none;
+    margin: 0 0 1rem 0;
+    border: 2px solid var(--p-color);
+}
 
+.title_input:focus{
+    outline: none;
+}
+.title_input:focus-within {
+    border: 2px solid var(--s-color); 
+    background-color: transparentxggfdds;
+}
+.discription_input:focus{
+    outline: none;
+}
+.discription_input:focus-within {
+    border: 2px solid var(--s-color); 
+}
 
 
