@@ -221,20 +221,43 @@ article:hover{
 }
 /* ADD NOTE--------------------------------------------------------------> */
 .addnote_background{
-        display: none;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 99.5vw;
-        height: 99.5vh; 
-        z-index: 9999;     
-        background-color: transparent;
-        -webkit-backdrop-filter: blur(4px);
-        backdrop-filter: blur(4px); 
-      
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 99.5vw;
+    height: 99.5vh; 
+    z-index: 9999;     
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px); 
+    
 }
+/* back icon button------------------------------------------------------------------------------> */
+.addnote_back_icon{
+    background-color: transparent;
+    position:absolute;
+    bottom: 40.5rem;
+    left:73.2rem;
+    
+}
+.addnote_icon_inside{
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+}
+.addnote_icon_path{
+    color: var(--p-color);
+    stroke: var(--p-color);
+    transition: color ease-in-out 0.5s, stroke ease-in-out 0.5s;
+}
+.addnote_back_icon :hover .addnote_icon_path{
+    color: var(--s-color);
+    stroke: var(--s-color);
+}
+/* Note adding section ---------------------------------------------------------------------------------------------> */
 .add_note{
     width: 60%;
     height: 80%;
@@ -249,6 +272,9 @@ article:hover{
     display: flex;
     justify-content: space-between;
     margin: 30px;
+}
+.add_note nav h1,h2{
+    color: var(--s-color);
 }
 .add_note form{
     display: flex;
