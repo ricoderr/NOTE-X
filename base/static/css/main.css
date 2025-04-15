@@ -280,6 +280,10 @@ article:hover{
     display: flex;
     flex-direction: column;
     padding: 2% 5%;
+    border-radius: 45px;
+}
+.addnote_form{
+    border-radius: 45px;
 }
 .title_label, .discription_label{
     font-size: larger;
@@ -314,5 +318,18 @@ article:hover{
 .discription_input:focus-within {
     border: 2px solid var(--s-color); 
 }
+.addnote_add_button{
+    width: 5rem;
+    height: 2rem;
+    border: 2px solid var(--s-color);
+    border-radius: 45px;
+    background-color: none;
+    transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    margin: 0 45%;
 
+}
+.addnote_add_button:hover{
+    border: 2px solid var(--p-color);
+    background-color: var(--s-color);
+}
 

@@ -77,7 +77,7 @@
                 <h1>ADD NOTE</h1>
                 <h2><img src="user-rounded-svgrepo-com.svg" alt="">User name</h2>
             </nav>
-            <div>
+            <div class="addnote_form">
                 <form action="">
                     {% csrf_token %}
                     <label for="title" class="title_label">Title</label>
@@ -86,7 +86,7 @@
                     <label for="discription" class="discription_label">Discription</label>
                     <textarea type="text" id="discription" class="discription_input"></textarea>
                     
-                    <button type="submit">Add</button>
+                    <button type="submit" class="addnote_add_button">Add</button>
                     
                 </form>
             </div>
