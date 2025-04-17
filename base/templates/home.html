@@ -35,16 +35,16 @@
         {% comment %} The note {% endcomment %}
         <div class="notes">
             <center><h1>Notes</h1></center>
-            {%if note%}
+            
             {%for note in notes%}
             <a href="" class="notes_link"><div class="notes_item">
                 <h2>{{note.Topic}}</h2>
                 <p>{{note.discription}}</p>
             </div></a>
+            {%empty%}
+            <h2>Empty!</h2>
             {%endfor%}
-            {%else%}
-            <img src="" alt="">
-            {%endif%}
+            
             <button class="addnote_button" id="addnote_button">ADD NOTE</button>
         </div>
         
@@ -59,6 +59,8 @@
             <a href="" class="Snotes_link"><div class="Snotes_item">
                 <p>{{Snote}}</p>
             </div></a>
+            {%empty%}
+            <h2>Empty!</h2>
             {%endfor%}
         </div>
         
@@ -81,10 +83,10 @@
                 <form action="">
                     {% csrf_token %}
                     <label for="title" class="title_label">Title</label>
-                    <input type="text" id="title" class="title_input">
+                    <input type="text" id="title" class="title_input" name="title_input">
                     
                     <label for="discription" class="discription_label">Discription</label>
-                    <textarea type="text" id="discription" class="discription_input"></textarea>
+                    <textarea type="text" id="discription" class="discription_input" name="discription_input"></textarea>
                     
                     <button type="submit" class="addnote_add_button">Add</button>
                     

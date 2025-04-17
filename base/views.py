@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Notes , Sticky_notes
 from django.contrib.auth.models import User
 from django.db import IntegrityError
@@ -33,18 +33,28 @@ def signIn(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Welcome back!")
-            return render(request, "home.html", {"messages" : messages})
+            return redirect("home")
             
         else :
             messages.error(request,"Crediantials error!")
             return render(request, "SignIn.html")
         
-    return render(request, 'home.html')
+    return render(request, 'signIn.html')
 
 def home(request):
     notes = Notes.objects.all()
     Snotes = Sticky_notes.objects.all()
     user = User.objects.all()
+    if request.method =="POST":
+        title_input = request.POST.get("title_input")
+        discription_input = request.POST.get("discription_input")
+        if title_input != "" and discription_input != "":
+            Notes.objects.create(user = request.user ,Topic = title_input, discription = discription_input)
+            messages.success(request, "Note added successfully")
+        else: 
+           messages.error(request, "Sorry! Invalid input") 
+            
+        
     return render(request,"home.html",{"notes": notes, 
                                        "Snotes": Snotes,
                                        "user": user})
