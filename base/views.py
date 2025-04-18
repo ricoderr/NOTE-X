@@ -7,21 +7,27 @@ from django.contrib.auth import authenticate, login, logout
 
 
 def home(request):
-    notes = Notes.objects.filter(user = request.user)
-    Snotes = Sticky_notes.objects.filter(user = request.user)
-    if request.method =="POST":
-        title_input = request.POST.get("title_input")
-        discription_input = request.POST.get("discription_input")
-        if title_input != "" and discription_input != "":
-            Notes.objects.create(user = request.user ,Topic = title_input, discription = discription_input)
-            messages.success(request, "Note added successfully")
-        else: 
-           messages.error(request, "Sorry! Invalid input") 
+    if request.user.is_authenticated:
+        notes = Notes.objects.filter(user = request.user)
+        Snotes = Sticky_notes.objects.filter(user = request.user)
+        
+        if request.method =="POST":
+            title_input = request.POST.get("title_input")
+            discription_input = request.POST.get("discription_input")
+            if title_input != "" and discription_input != "":
+                Notes.objects.create(user = request.user ,Topic = title_input, discription = discription_input)
+                messages.success(request, "Note added successfully")
+            else: 
+                messages.error(request, "Sorry! Invalid input") 
+    else:
+        notes = None
+        Snotes = None 
+        
             
         
     return render(request,"home.html",{"notes": notes, 
                                        "Snotes": Snotes,
-                                       "user": request.user})
+                                       "user":request.user})
     
 
 def signUp(request):

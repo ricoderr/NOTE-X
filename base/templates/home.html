@@ -32,8 +32,6 @@
                 {%csrf_token%}
                     <button type="submit">Log out</button>
                 </form>
-            {%else%}
-                <h2>please logIn to create Notes!</h2>
             {%endif%}
 
 
@@ -46,17 +44,19 @@
             <center><h1>Notes</h1></center>
             
             {%for note in notes%}
-            <a href="" class="notes_link"><div class="notes_item">
-                <h2>{{note.Topic}}</h2>
-                <p>{{note.discription}}</p>
-            </div></a>
+                <a href="" class="notes_link"><div class="notes_item">
+                    <h2>{{note.Topic}}</h2>
+                    <p>{{note.discription}}</p>
+                </div></a>
             {%empty%}
-            <h2>Empty!</h2>
+                {%if not user.is_authenticated%}
+                <h2 class="SignUprequest">Please SignUp/In to create/view Notes.</h2>
+                {%else%}
+                <h2 class="SignUprequest">Empty -_-</h2>
+                {%endif%}
             {%endfor%}
             {%if user.is_authenticated%}
                 <button class="addnote_button" id="addnote_button">ADD NOTE</button>
-            {%else%}
-                <h2>Please SignUp/In to create or view you Notes</h2>
             {%endif%}
         </div>
         
@@ -72,7 +72,7 @@
                 <p>{{Snote}}</p>
             </div></a>
             {%empty%}
-            <h2>Empty!</h2>
+            <h2 class="Empty_Snotes">Empty!</h2>
             {%endfor%}
         </div>
         

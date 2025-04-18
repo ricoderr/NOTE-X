@@ -185,6 +185,11 @@ article:hover{
     background-color: var(--s-color);
     color: var(--p-color);
 }
+.SignUprequest{
+    position: relative;
+    top: 35%;
+    opacity: 0.4;
+}
 /* sticky notes --------------------------------------------------------->*/
 .sticky_notes{
     display: flex;
@@ -218,6 +223,12 @@ article:hover{
 .Snotes_item:hover{
     border: 3px solid var(--p-color);
     margin: calc(12% - 2px);
+}
+.Empty_Snotes{
+    position: relative;
+    top: 35%;
+    left: 40%;
+    opacity: 0.4;
 }
 /* ADD NOTE--------------------------------------------------------------> */
 .addnote_background{
