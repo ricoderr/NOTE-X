@@ -27,7 +27,16 @@
     <main>
         {% comment %} The profile {% endcomment %}
         <article class="profile">
-            
+            {%if user.is_authenticated%}
+                <form action="{% url 'Logout'%}" method="POST">
+                {%csrf_token%}
+                    <button type="submit">Log out</button>
+                </form>
+            {%else%}
+                <h2>please logIn to create Notes!</h2>
+            {%endif%}
+
+
         </article>
         
         
@@ -44,8 +53,11 @@
             {%empty%}
             <h2>Empty!</h2>
             {%endfor%}
-            
-            <button class="addnote_button" id="addnote_button">ADD NOTE</button>
+            {%if user.is_authenticated%}
+                <button class="addnote_button" id="addnote_button">ADD NOTE</button>
+            {%else%}
+                <h2>Please SignUp/In to create or view you Notes</h2>
+            {%endif%}
         </div>
         
         

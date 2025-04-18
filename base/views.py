@@ -3,8 +3,26 @@ from .models import Notes , Sticky_notes
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
+
+def home(request):
+    notes = Notes.objects.filter(user = request.user)
+    Snotes = Sticky_notes.objects.filter(user = request.user)
+    if request.method =="POST":
+        title_input = request.POST.get("title_input")
+        discription_input = request.POST.get("discription_input")
+        if title_input != "" and discription_input != "":
+            Notes.objects.create(user = request.user ,Topic = title_input, discription = discription_input)
+            messages.success(request, "Note added successfully")
+        else: 
+           messages.error(request, "Sorry! Invalid input") 
+            
+        
+    return render(request,"home.html",{"notes": notes, 
+                                       "Snotes": Snotes,
+                                       "user": request.user})
+    
 
 def signUp(request):
     if request.method == "POST":
@@ -41,23 +59,7 @@ def signIn(request):
         
     return render(request, 'signIn.html')
 
-def home(request):
-    notes = Notes.objects.all()
-    Snotes = Sticky_notes.objects.all()
-    user = User.objects.all()
-    if request.method =="POST":
-        title_input = request.POST.get("title_input")
-        discription_input = request.POST.get("discription_input")
-        if title_input != "" and discription_input != "":
-            Notes.objects.create(user = request.user ,Topic = title_input, discription = discription_input)
-            messages.success(request, "Note added successfully")
-        else: 
-           messages.error(request, "Sorry! Invalid input") 
-            
-        
-    return render(request,"home.html",{"notes": notes, 
-                                       "Snotes": Snotes,
-                                       "user": user})
-    
-
-
+def Logout(request):
+    logout(request)
+    messages.success(request, "You have been logged out succesfully!")
+    return redirect('signIn')
