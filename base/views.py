@@ -13,12 +13,13 @@ def home(request):
         
         if request.method =="POST":
             title_input = request.POST.get("title_input")
-            discription_input = request.POST.get("discription_input")
-            if title_input != "" and discription_input != "":
-                Notes.objects.create(user = request.user ,Topic = title_input, discription = discription_input)
+            description_input = request.POST.get("description_input")
+            if title_input != "" and description_input != "":
+                Notes.objects.create(user = request.user ,Topic = title_input, description = description_input)
                 messages.success(request, "Note added successfully")
             else: 
                 messages.error(request, "Sorry! Invalid input") 
+            return redirect('home')
     else:
         notes = None
         Snotes = None 

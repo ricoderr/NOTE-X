@@ -44,9 +44,9 @@
             <center><h1>Notes</h1></center>
             
             {%for note in notes%}
-                <a href="" class="notes_link"><div class="notes_item">
+                <a href="" class="notes_link" Id="notes_link"><div class="notes_item"> 
                     <h2>{{note.Topic}}</h2>
-                    <p>{{note.discription}}</p>
+                    <p>{{note.description}}</p>
                 </div></a>
             {%empty%}
                 {%if not user.is_authenticated%}
@@ -92,13 +92,13 @@
                 <h2><img src="user-rounded-svgrepo-com.svg" alt="">User name</h2>
             </nav>
             <div class="addnote_form">
-                <form action="">
+                <form action="" method="POST">
                     {% csrf_token %}
                     <label for="title" class="title_label">Title</label>
                     <input type="text" id="title" class="title_input" name="title_input">
                     
-                    <label for="discription" class="discription_label">Discription</label>
-                    <textarea type="text" id="discription" class="discription_input" name="discription_input"></textarea>
+                    <label for="description" class="description_label">description</label>
+                    <textarea type="text" id="description" class="description_input" name="description_input"></textarea>
                     
                     <button type="submit" class="addnote_add_button">Add</button>
                     

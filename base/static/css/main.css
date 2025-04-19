@@ -296,7 +296,7 @@ article:hover{
 .addnote_form{
     border-radius: 45px;
 }
-.title_label, .discription_label{
+.title_label, .description_label{
     font-size: larger;
     font-weight: bold;
 }
@@ -307,7 +307,7 @@ article:hover{
     border: 2px solid var(--p-color);
     border-radius: 15px;
 }
-.discription_input{
+.description_input{
     height: 14rem;
     border-radius: 25px;
     padding: 15px;
@@ -323,10 +323,10 @@ article:hover{
     border: 2px solid var(--s-color); 
     background-color: transparentxggfdds;
 }
-.discription_input:focus{
+.description_input:focus{
     outline: none;
 }
-.discription_input:focus-within {
+.description_input:focus-within {
     border: 2px solid var(--s-color); 
 }
 .addnote_add_button{
