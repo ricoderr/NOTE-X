@@ -321,7 +321,7 @@ article:hover{
 }
 .title_input:focus-within {
     border: 2px solid var(--s-color); 
-    background-color: transparentxggfdds;
+    background-color: transparent;
 }
 .description_input:focus{
     outline: none;
