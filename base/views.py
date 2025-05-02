@@ -4,9 +4,12 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from itertools import chain
+from operator import attrgetter
 
 
 def home(request):
+    combined_history = []
     if request.user.is_authenticated:
         notes = Notes.objects.filter(user = request.user)
         Snotes = Sticky_notes.objects.filter(user = request.user)
@@ -20,6 +23,17 @@ def home(request):
             else: 
                 messages.error(request, "Sorry! Invalid input") 
             return redirect('home')
+         
+        note_history = Notes.history.filter(user = request.user).all()
+        snote_history = Sticky_notes.history.filter(user = request.user).all()
+           
+        combined_history = sorted(
+        chain(note_history, snote_history),
+        key=attrgetter('history_date'),
+        reverse=True 
+        )
+            
+        
     else:
         notes = None
         Snotes = None 
@@ -28,7 +42,8 @@ def home(request):
         
     return render(request,"home.html",{"notes": notes, 
                                        "Snotes": Snotes,
-                                       "user":request.user})
+                                       "user":request.user, 
+                                       "history":combined_history})
     
 
 def signUp(request):

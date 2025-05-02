@@ -26,6 +26,7 @@ nav{
 }
 .logo{
     background-color: var(--p-color);
+    opacity: 0.8;
     border: 2px solid transparent;
     border-bottom-right-radius: 100px;
     display: flex;
@@ -37,6 +38,7 @@ nav{
 }
 .logo h1{
     color: var(--t-color);
+    opacity: 1;
     padding: 0.2rem;
     padding-right: 0.8rem;
     border: 2px solid transparent;
@@ -101,6 +103,8 @@ main{
 }
 article{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 45px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -114,6 +118,24 @@ article:hover{
     box-shadow: -10px 0 20px var(--s-color),10px 0 20px var(--s-color); 
 
 }
+.history-ul{
+    padding: 2rem;
+    height: 68%;
+    overflow-y: scroll;
+}
+.history-ul::-webkit-scrollbar {
+    display: none; 
+}
+.Logout_button{
+    color:var(--t-color);
+    margin: 0.5rem;
+    font-weight: bold;
+    padding: 0.8rem;
+    border: 2px solid rgb(255, 0, 0);
+    opacity: 0.5;
+    border-radius: 10px;
+}
+/* notes----------------------------------------------------------------------------------------------> */
 .notes{
     margin:  0rem 3rem;
     border-radius: 45px;
@@ -176,7 +198,7 @@ article:hover{
     left: 70%;
     border: 0.2rem solid var(--p-color);
     background-color: black;
-    border-radius: 45px;
+    border-radius: 10px;
     transition: border ease-in-out 0.5s, background-color ease-in-out 0.5s, color ease-in-out 0.5s;
     cursor: pointer;
 }
