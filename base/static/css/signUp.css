@@ -134,9 +134,11 @@ form{
     left: 44%;
     bottom: 7%;  
     transition: color ease-in-out 0.5s;
+    /* opacity: 0.5; */
 }
 .SignIn_director:hover{
     color: var(--s-color);
+    opacity: 0.7;
 }
 
 

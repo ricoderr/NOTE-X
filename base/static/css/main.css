@@ -10,11 +10,17 @@
 html{
     scroll-behavior: smooth;
 }
-:root{
+:root {
     --p-color: #854ce6;
+    --p-color-rgb: 133, 76, 230;
+  
     --s-color: #f4a6d7;
+    --s-color-rgb: 244, 166, 215;
+  
     --t-color: #e6e6e6;
-}
+    --t-color-rgb: 230, 230, 230;
+  }
+  
 nav{
     
     margin: 2rem 0;
@@ -124,7 +130,7 @@ article:hover{
     overflow-y: scroll;
 }
 .history-ul::-webkit-scrollbar {
-    display: none; 
+    display: none;  
 }
 .Logout_button{
     color:var(--t-color);
@@ -134,6 +140,12 @@ article:hover{
     border: 2px solid rgb(255, 0, 0);
     opacity: 0.5;
     border-radius: 10px;
+    transition: background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.Logout_button:hover{
+    background-color: rgb(255, 0, 0);
+    opacity: 1;
+    cursor: pointer;
 }
 /* notes----------------------------------------------------------------------------------------------> */
 .notes{
@@ -265,7 +277,7 @@ article:hover{
     z-index: 9999;     
     background-color: transparent;
     -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px); 
+    backdrop-filter: blur(10px); 
     
 }
 /* back icon button------------------------------------------------------------------------------> */
@@ -294,75 +306,85 @@ article:hover{
 .add_note{
     width: 60%;
     height: 80%;
-    border: 2px solid var(--p-color);
-    transition: border 0.5s ease-in-out;
+    box-shadow: 0 0 10px var(--s-color), 0 0 20px var(--s-color); 
+    transition: box-shadow 0.5s ease-in-out;
     border-radius: 45px;
+    background-color: rgba(0, 0, 0, 0.303);
 }
 .add_note:hover{
-    border: 2px solid var(--s-color);
+    box-shadow: 0 0 10px var(--p-color), 0 0 20px var(--p-color); 
 }
 .add_note nav{
     display: flex;
     justify-content: space-between;
     margin: 30px;
+    background-color: transparent;
 }
-.add_note nav h1,h2{
-    color: var(--s-color);
+.add_note nav h1{
+    color: var(--p-color);
+    font-weight:bold;
+    font-size: larger;
+    background-color: transparent;
 }
 .add_note form{
     display: flex;
     flex-direction: column;
     padding: 2% 5%;
     border-radius: 45px;
+    background-color: transparent;
 }
 .addnote_form{
     border-radius: 45px;
+    background-color: transparent;
 }
 .title_label, .description_label{
     font-size: larger;
     font-weight: bold;
+    background-color: transparent;
 }
 .title_input{
     height: 2rem;
     margin-bottom: 2rem;
     padding: 0 15px;
-    border: 2px solid var(--p-color);
-    border-radius: 15px;
+    border: 2px solid var(--s-color);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.303);
 }
 .description_input{
     height: 14rem;
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 15px;
     resize: none;
     margin: 0 0 1rem 0;
-    border: 2px solid var(--p-color);
+    border: 2px solid var(--s-color);
+    background-color: transparent;
 }
 
 .title_input:focus{
     outline: none;
 }
 .title_input:focus-within {
-    border: 2px solid var(--s-color); 
+    border: 2px solid var(--p-color); 
     background-color: transparent;
 }
 .description_input:focus{
     outline: none;
 }
 .description_input:focus-within {
-    border: 2px solid var(--s-color); 
+    border: 2px solid var(--p-color); 
 }
 .addnote_add_button{
     width: 5rem;
     height: 2rem;
-    border: 2px solid var(--s-color);
-    border-radius: 45px;
+    border: 2px solid var(--p-color);
+    border-radius: 10px;
     background-color: none;
     transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
     margin: 0 45%;
 
 }
 .addnote_add_button:hover{
-    border: 2px solid var(--p-color);
+    border: 2px solid var(--s-color);
     background-color: var(--s-color);
 }
 
