@@ -128,6 +128,7 @@ article:hover{
     padding: 2rem;
     height: 68%;
     overflow-y: scroll;
+    border-radius: 45px;
 }
 .history-ul::-webkit-scrollbar {
     display: none;  
@@ -249,20 +250,44 @@ article:hover{
 .Snotes_item{
     margin: 12%;
     padding: 3%;
-    border: 1px solid var(--s-color);
-    border-radius: 7%;
+    border: 3px solid var(--s-color);
+    border-radius: 10px;
     border-top-left-radius: 0;
     transition: border ease-in-out 0.5s, margin ease-in-out 0.5s;
 }
 .Snotes_item:hover{
     border: 3px solid var(--p-color);
-    margin: calc(12% - 2px);
+
 }
 .Empty_Snotes{
     position: relative;
     top: 35%;
     left: 40%;
     opacity: 0.4;
+}
+.addSnote_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 3.2rem;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 0;
+    position:fixed;
+    top: 87%;
+    left: 94%;
+    border: 0.2rem solid var(--p-color);
+    background-color: black;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    transition: border ease-in-out 0.5s, background-color ease-in-out 0.5s, color ease-in-out 0.5s;
+    cursor: pointer;
+}
+.addSnote_button:hover{
+    border: 0.2rem solid var(--s-color);
+    background-color: var(--s-color);
+    color: var(--p-color);
 }
 /* ADD NOTE--------------------------------------------------------------> */
 .addnote_background{

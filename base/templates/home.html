@@ -13,7 +13,7 @@
         </div>
         <ul class="nav_items">
             <li><a href="#">Home</a></li>
-            <li><a href="" onclick="tooglebox()">About Dev</a></li>
+            <li><a href="">About Dev</a></li>
             <li><a href="signUp/">
                 {%if user.is_authenticated%}
                 <img src="{% static 'images/user-rounded-svgrepo-com.svg' %}" alt="SVG Icon" class="user_icon">
@@ -25,7 +25,7 @@
         </ul>
     </nav>
     <main>
-        {% comment %} The profile {% endcomment %}
+        {% comment %} The History {% endcomment %}
         <article class="history">
             <h1>History</h1>
 
@@ -33,9 +33,10 @@
                 <ul class="history-ul" style="height = 100% {%if user.is_authenticated%} height = 68% {%endif%}">
                     {%for item in history%}
                         <li>
-                            Created <strong>{{item.Topic}}</strong> at {{item.history_date}}.
+                            Created <strong>{{item.Topic}} {{item.Snote}}</strong> at {{item.history_date}}.
                             
                         </li>
+                        <br>
                     {%endfor%}
                 </ul>
 
@@ -91,6 +92,10 @@
             {%empty%}
             <h2 class="Empty_Snotes">Empty!</h2>
             {%endfor%}
+            {%if user.is_authenticated%}
+                <button class="addSnote_button" id="addSnote_button">+</button>
+            {%endif%}
+
         </div>
         
     </main>
