@@ -224,6 +224,7 @@ article:hover{
     position: relative;
     top: 35%;
     opacity: 0.4;
+    color: var(--s-color);
 }
 /* sticky notes --------------------------------------------------------->*/
 .sticky_notes{
@@ -264,6 +265,7 @@ article:hover{
     top: 35%;
     left: 40%;
     opacity: 0.4;
+    color: var(--s-color);
 }
 .addSnote_button{
     display: flex;
@@ -409,6 +411,117 @@ article:hover{
 
 }
 .addnote_add_button:hover{
+    border: 2px solid var(--s-color);
+    background-color: var(--s-color);
+}
+/* ADD STICKY NOTE======================================================================================================> */
+.addSnote_background{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 99.5vw;
+    height: 99.5vh; 
+    z-index: 9999;     
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(10px); 
+    
+}
+/* back icon button------------------------------------------------------------------------------> */
+.addSnote_back_icon{
+    background-color: transparent;
+    position:absolute;
+    bottom: 40.5rem;
+    left:73.2rem;
+    
+}
+.addSnote_icon_inside{
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+}
+.addSnote_icon_path{
+    color: var(--p-color);
+    stroke: var(--p-color);
+    transition: color ease-in-out 0.5s, stroke ease-in-out 0.5s;
+}
+.addSnote_back_icon :hover .addSnote_icon_path{
+    color: var(--s-color);
+    stroke: var(--s-color);
+}
+/* Sticky_Note adding section ================================================================================> */
+.add_Snote{
+    width: 30%;
+    height: 50%;
+    box-shadow: 0 0 10px var(--s-color), 0 0 20px var(--s-color); 
+    transition: box-shadow 0.5s ease-in-out;
+    border-radius: 45px;
+    background-color: rgba(0, 0, 0, 0.303);
+}
+.add_Snote:hover{
+    box-shadow: 0 0 10px var(--p-color), 0 0 20px var(--p-color); 
+}
+.add_Snote nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    background-color: transparent;
+}
+.add_Snote nav h1{
+    color: var(--s-color);
+    font-weight:bold;
+    font-size: larger;
+    background-color: transparent;
+}
+.add_Snote form{
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5%;
+    border-radius: 45px;
+    background-color: transparent;
+}
+.addSnote_form{
+    border-radius: 45px;
+    background-color: transparent;
+}
+.Stitle_label{
+    font-size: larger;
+    font-weight: bold;
+    background-color: transparent;
+}
+.Stitle_input{
+    height: 4rem;
+    margin-bottom: 2rem;
+    font-size: larger;
+    padding: 0 15px;
+    border: 2px solid var(--s-color);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.303);
+}
+
+
+.Stitle_input:focus{
+    outline: none;
+}
+.Stitle_input:focus-within {
+    border: 2px solid var(--p-color); 
+    background-color: transparent;
+}
+
+.addSnote_add_button{
+    width: 5rem;
+    height: 2rem;
+    border: 2px solid var(--p-color);
+    border-radius: 10px;
+    background-color: none;
+    transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    margin: 5% 40%;
+
+}
+.addSnote_add_button:hover{
     border: 2px solid var(--s-color);
     background-color: var(--s-color);
 }

@@ -15,7 +15,7 @@ class Notes(models.Model):
     
 class Sticky_notes(models.Model):
     Snote = models.CharField(max_length=100)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now = True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     history = HistoricalRecords()
 

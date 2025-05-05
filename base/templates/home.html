@@ -116,10 +116,10 @@
                 <form action="" method="POST">
                     {% csrf_token %}
                     <label for="title" class="title_label">Title</label>
-                    <input type="text" id="title" class="title_input" name="title_input">
+                    <input type="text" id="title" class="title_input" name="title_input" required>
                     
                     <label for="description" class="description_label">description</label>
-                    <textarea type="text" id="description" class="description_input" name="description_input"></textarea>
+                    <textarea type="text" id="description" class="description_input" name="description_input" required></textarea>
                     
                     <button type="submit" class="addnote_add_button">Add</button>
                     
@@ -128,35 +128,30 @@
         </div>
     </section>
 
-{% comment %} view note --------------------------------------------------------------> {% endcomment %}
-    <section class="addnote_background" id ="viewnote_background">
-        <a href="/" class="addnote_back_icon" aria-label="Go back to home">
-            <svg class="addnote_icon_inside" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path class="addnote_icon_path" d="M14.389 7.956v4.374l1.056 0.010c7.335 0.071 11.466 3.333 12.543 9.944-4.029-4.661-8.675-4.663-12.532-4.664h-1.067v4.337l-9.884-7.001 9.884-7zM15.456 5.893l-12.795 9.063 12.795 9.063v-5.332c5.121 0.002 9.869 0.26 13.884 7.42 0-4.547-0.751-14.706-13.884-14.833v-5.381z"/>
-            </svg>
-          </a>
-          
-          
-        <div class="add_note">
-            <nav>
-                <h1>ADD NOTE</h1>
-                <h2>User name</h2>
-            </nav>
-            <div class="addnote_form">
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    <label for="title" class="title_label">Title</label>
-                    <input type="text" id="title" class="title_input" name="title_input">
-                    
-                    <label for="description" class="description_label">description</label>
-                    <textarea type="text" id="description" class="description_input" name="description_input"></textarea>
-                    
-                    <button type="submit" class="addnote_add_button">Add</button>
-                    
-                </form>
-            </div>
+{% comment %} Add sticky note-----------------------------------------------------------------------> {% endcomment %}
+<section class="addSnote_background" id="addSnote_background">
+    <a href="/" class="addSnote_back_icon" aria-label="Go back to home">
+        <svg class="addSnote_icon_inside" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path class="addSnote_icon_path" d="M14.389 7.956v4.374l1.056 0.010c7.335 0.071 11.466 3.333 12.543 9.944-4.029-4.661-8.675-4.663-12.532-4.664h-1.067v4.337l-9.884-7.001 9.884-7zM15.456 5.893l-12.795 9.063 12.795 9.063v-5.332c5.121 0.002 9.869 0.26 13.884 7.42 0-4.547-0.751-14.706-13.884-14.833v-5.381z"/>
+        </svg>
+      </a>
+      
+      
+    <div class="add_Snote">
+        <nav>
+            <h1>ADD STICKY NOTE</h1>
+        </nav>
+        <div class="addSnote_form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="Stitle" class="Stitle_label">NOTE HERE: </label>
+                <input type="text" id="Stitle" class="Stitle_input" name="Stitle_input" required>
+                <button type="submit" class="addSnote_add_button">Add</button>
+                
+            </form>
         </div>
-    </section>
+    </div>
+</section>
     
 <script src="{% static 'js/script.js' %}"></script>
 </body>

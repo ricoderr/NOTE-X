@@ -17,13 +17,20 @@ def home(request):
         if request.method =="POST":
             title_input = request.POST.get("title_input")
             description_input = request.POST.get("description_input")
-            if title_input != "" and description_input != "":
-                Notes.objects.create(user = request.user ,Topic = title_input, description = description_input)
-                messages.success(request, "Note added successfully")
-            else: 
-                messages.error(request, "Sorry! Invalid input") 
+            Snote = request.POST.get("Stitle_input")
+            if title_input and description_input: 
+                if title_input != "" and description_input != "":
+                    Notes.objects.create(user = request.user ,Topic = title_input, description = description_input)
+                    messages.success(request, "Note added successfully")
+                else: 
+                    messages.error(request, "Sorry! Invalid input") 
+            if Snote: 
+                if Snote != "": 
+                    Sticky_notes.objects.create(user = request.user, Snote = Snote)
+                    messages.success(request, "Sticky Note added successfully")
+                else: 
+                    messages.error(request, "Sorry! Invalid input")
             return redirect('home')
-         
         note_history = Notes.history.filter(user = request.user).all()
         snote_history = Sticky_notes.history.filter(user = request.user).all()
            
